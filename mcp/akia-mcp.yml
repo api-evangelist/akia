@@ -1,0 +1,45 @@
+generated: '2026-08-06'
+method: probed
+status: published
+source: https://api.akia.com/.well-known/oauth-protected-resource
+server:
+  name: akia
+  transport: http
+  url: https://sys.akia.ai/mcp
+  discovery: 'Advertised as the protected `resource` in the RFC 9728 OAuth
+    protected-resource metadata served at https://api.akia.com/.well-known/oauth-protected-resource
+    and https://sys.akia.com/.well-known/oauth-protected-resource.'
+authorization:
+  required: true
+  scheme: Bearer
+  spec: RFC 9728 (OAuth 2.0 Protected Resource Metadata)
+  www_authenticate: 'Bearer resource_metadata="https://sys.akia.ai/.well-known/oauth-protected-resource"'
+  authorization_servers:
+  - https://sys.akia.ai/
+  scopes_supported:
+  - customers:read
+  - messages:read
+  dynamic_client_registration: https://sys.akia.ai/oauth/register
+  pkce: S256
+tools:
+  status: gated
+  note: 'Both `initialize` and `tools/list` return HTTP 401 without a Bearer token,
+    so the live tool list and its inputSchemas could not be read anonymously. No tool
+    list is published in Akia''s llms.txt or developer docs either, so nothing is
+    recorded here rather than guessed. Retrieving the real manifest requires an
+    OAuth access token from https://sys.akia.ai/oauth/authorize.'
+x-evidence:
+  fetched: '2026-08-06'
+  probes:
+  - url: https://sys.akia.ai/mcp
+    method: 'POST jsonrpc tools/list'
+    http_status: 401
+    body: '{"error":"Authorization header with Bearer token required"}'
+  - url: https://sys.akia.ai/mcp
+    method: 'POST jsonrpc initialize'
+    http_status: 401
+    body: '{"error":"Authorization header with Bearer token required"}'
+  - url: https://api.akia.com/.well-known/oauth-protected-resource
+    method: GET
+    http_status: 200
+    content_type: application/json; charset=utf-8

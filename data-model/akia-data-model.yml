@@ -1,0 +1,158 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs
+note: 'Derived from the response-parameter tables published on Akia''s own operation
+  reference pages, not from an OpenAPI — Akia publishes no machine-readable spec.
+  Only fields and relationships the docs actually state are recorded; nothing is
+  inferred beyond an explicit id-reference field.'
+entities:
+- name: Customer
+  description: A guest.
+  operations:
+  - POST /v3/customers
+  - GET /v3/customers/:id
+  - POST /v3/customers/:id
+  - POST /v3/customers/search
+  - GET /v3/customers/:id/reservations
+  - POST /v3/customers/:customer_id/messages
+  - POST /v3/customers/:customer_id/mark_open
+  - POST /v3/customers/:customer_id/activities
+  fields:
+  - {name: id, type: integer, note: returned as a JSON string in examples}
+  - {name: name, type: string}
+  - {name: first_name, type: string, on: create}
+  - {name: last_name, type: string, required: true, on: create}
+  - {name: phone_number, type: string, format: E.164}
+  - {name: email, type: string}
+  - {name: extern_id, type: string, note: caller-owned id; Akia dedupes against it}
+  - {name: room_number, type: string, note: present only while the guest is on property}
+  - {name: property_id, type: integer, on: create, required: true}
+  scopes: [customers:read, customers:write]
+- name: Reservation
+  description: A stay.
+  operations:
+  - POST /v3/reservations
+  - POST /v4/reservations/search
+  - GET /v3/reservations/:reservation_id
+  - POST /v3/reservations/:reservation_id
+  - GET /v3/reservations/:reservation_id/folio_items
+  - GET /v3/reservations/:reservation_id/custom_fields
+  - POST /v3/reservations/:reservation_id/custom_fields
+  fields:
+  - {name: id, type: integer}
+  - {name: customer_id, type: integer}
+  - {name: status, type: string, enum: [reserved, arrived, departed, canceled]}
+  - {name: arrival_date, type: string, format: YYYY-MM-DD}
+  - {name: departure_date, type: string, format: YYYY-MM-DD}
+  - {name: extern_id, type: string, note: typically set by the PMS}
+  - {name: room_number, type: string}
+  - {name: room_type, type: string}
+  - {name: booking_source, type: string}
+  - {name: balance_due, type: integer, unit: cents}
+  - {name: confirmation_number, type: integer}
+  - {name: deposit, type: integer, unit: cents}
+  - {name: total_payment, type: integer, unit: cents}
+  - {name: tax, type: integer, unit: cents}
+  - {name: party_size, type: integer}
+  - {name: notes, type: string}
+  - {name: rate_code, type: string}
+  - {name: is_duplicated, type: boolean}
+  scopes: [customers:read]
+- name: Property
+  description: A hotel or rental property. Called office_id in reservation and search payloads.
+  operations:
+  - GET /v3/properties
+  fields:
+  - {name: id, type: integer}
+  - {name: name, type: string}
+  scopes: [properties:read, properties:write]
+- name: MiniApp
+  description: A hosted guest-facing form or flow.
+  operations:
+  - GET /v4/mini_apps
+  - GET /v3/mini_apps/:mini_app_id
+  - GET /v3/mini_apps/:mini_app_id/sessions
+  fields:
+  - {name: id, type: integer}
+  - {name: office_id, type: integer, note: the mini app's property, if applicable}
+  - {name: company_id, type: integer, note: the mini app's company, if applicable}
+  - {name: name, type: string}
+  scopes: [mini_apps:read, mini_apps:write]
+- name: MiniAppSession
+  description: One guest's run through a mini app.
+  operations:
+  - GET /v3/mini_app_sessions/:mini_app_session_id
+  scopes: [mini_apps:read]
+- name: Agreement
+  description: A signable document (e.g. rental agreement) generated for a guest.
+  operations:
+  - GET /v3/agreements
+  - POST /v3/agreements/generate
+  - GET /v3/agreements/:id/sessions
+  scopes: [mini_apps:read, mini_apps:write]
+- name: SignedAgreement
+  operations:
+  - GET /v3/signed_agreements/:id
+  scopes: [mini_apps:read]
+- name: Message
+  description: A guest message on a customer's conversation.
+  operations:
+  - POST /v3/customers/:customer_id/messages
+  scopes: [messages:read, messages:write]
+- name: Audience
+  description: A targetable set of customers for campaigns.
+  operations:
+  - POST /v3/audiences
+  - POST /v3/audiences/:audience_id/add
+  scopes: [audiences:write]
+- name: Report
+  operations:
+  - POST /v3/reports/:id/run
+  - GET /v3/reports/jobs/:identifier
+  scopes: [reports:read]
+- name: TeamChat
+  description: Internal staff messaging.
+  operations:
+  - GET /v3/me/team_chats
+  - POST /v3/team_chats/messages
+- name: Me
+  description: The authenticated context.
+  operations:
+  - GET /v3/me
+relationships:
+- {from: Reservation, to: Customer, kind: belongs_to, via: customer_id}
+- {from: Customer, to: Reservation, kind: has_many, via: GET /v3/customers/:id/reservations}
+- {from: Customer, to: Property, kind: belongs_to, via: property_id}
+- {from: Customer, to: Message, kind: has_many, via: POST /v3/customers/:customer_id/messages}
+- {from: MiniApp, to: Property, kind: belongs_to, via: office_id}
+- {from: MiniApp, to: MiniAppSession, kind: has_many, via: GET /v3/mini_apps/:mini_app_id/sessions}
+- {from: Agreement, to: MiniAppSession, kind: has_many, via: GET /v3/agreements/:id/sessions}
+- {from: Reservation, to: Property, kind: belongs_to, via: office_id, note: 'office_id is
+    required on POST /v4/reservations/search and is described as "The ID of the property that
+    this guest belongs to"'}
+- {from: Report, to: ReportJob, kind: has_many, via: GET /v3/reports/jobs/:identifier}
+identifier_conventions:
+  external_id_field: extern_id
+  external_id_note: 'Threaded through Customer and Reservation; Akia dedupes on it,
+    which makes it the join key back to the property management system.'
+  property_alias: 'The same entity appears as property_id on customers and office_id
+    on reservations and mini apps.'
+  money: integer, cents
+  dates: YYYY-MM-DD strings
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+  - url: https://api.akia.com/docs
+    http_status: 200
+  - url: https://api.akia.com/docs/post/customers
+    http_status: 200
+  - url: https://api.akia.com/docs/get/customers/:id
+    http_status: 200
+  - url: https://api.akia.com/docs/post/reservations/search
+    http_status: 200
+  - url: https://api.akia.com/docs/get/properties
+    http_status: 200
+  - url: https://api.akia.com/docs/get/mini_apps
+    http_status: 200
+  operations_inventoried: 30
+  operations_field_tables_read: 5

@@ -1,0 +1,100 @@
+generated: '2026-08-06'
+method: searched
+source: https://www.akia.com/.well-known/
+hosts:
+- host: https://www.akia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain; charset=utf-8
+    file: akia-security.txt
+    spec: RFC 9116
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain; charset=utf-8
+    file: akia-robots.txt
+    note: 'Carries a Cloudflare Content-Signal header (search=yes, ai-input=yes,
+      ai-train=yes) and an explicit named-agent allow list covering GPTBot,
+      ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot and
+      others; /admin/, /api/ and /decks/ are disallowed for all agents.'
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain; charset=utf-8
+    file: ../llms/akia-llms.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.akia.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json; charset=utf-8
+    file: akia-oauth-authorization-server.json
+    spec: RFC 8414
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: application/json; charset=utf-8
+    file: akia-oauth-protected-resource.json
+    spec: RFC 9728
+    note: Advertises the MCP resource https://sys.akia.ai/mcp
+  - path: /robots.txt
+    status: 200
+    note: 'User-agent: * / Disallow: / — the API host asks every crawler off.'
+  - path: /.well-known/security.txt
+    status: 200
+    rejected: true
+    reason: 'SPA catch-all — returns the api.akia.com login HTML shell for every
+      unmatched path, not a security.txt.'
+  - path: /.well-known/agent-card.json
+    status: 200
+    rejected: true
+    reason: 'SPA catch-all — HTML login shell, not an A2A AgentCard. No agent card
+      is published on any Akia host.'
+- host: https://sys.akia.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: Identical document to the api.akia.com copy.
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    note: Identical document to the api.akia.com copy.
+- host: https://akia.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: Same document as www.akia.com, canonicalized to www.akia.com.
+  - path: /llms.txt
+    status: 200
+    note: Same document as www.akia.com.
+- host: https://sys.akia.ai
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    spec: RFC 8414
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    spec: RFC 9728
+  - path: /.well-known/agent-card.json
+    status: 200
+    rejected: true
+    reason: SPA catch-all HTML, not an AgentCard.
+x-evidence:
+  fetched: '2026-08-06'
+  probed_hosts:
+  - www.akia.com
+  - api.akia.com
+  - sys.akia.com
+  - akia.ai
+  - sys.akia.ai
+  - web.akia.ai

@@ -1,0 +1,104 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs
+families:
+- family: Web Chat
+  description: 'A JavaScript widget embedded on a hotel website or booking engine so
+    prospective guests can message the property while browsing. Falls back to SMS
+    follow-up when the visitor supplies a phone number.'
+  loader: https://web.akia.ai/chat.js
+  global: AkiaChat
+  init: AkiaChat.init({ token, color, padBottom, padRight })
+  credential: 'Website Token, found in Akia Settings under Platforms > Web Chat.'
+  options:
+  - token
+  - color
+  - padBottom
+  - padRight
+  configured_in_product:
+  - Welcome message
+  - Available hours
+  - Offline / unavailable message
+  - SMS follow-up
+  docs: https://api.akia.com/docs/webchat
+- family: Akia Embed SDK
+  description: 'Embeds the Akia application inside a partner''s own cloud product —
+    typically a property management system that wants Akia available to its customers
+    without tab-switching. Requires partner certification.'
+  loader: https://api.akia.com/sdk.js
+  global: AkiaEmbed
+  init: AkiaEmbed.init({ partnerID, sound, onLoad })
+  methods:
+  - AkiaEmbed.init
+  - AkiaEmbed.requestNotificationPermissions
+  credential: partnerID (the partner's OAuth client_id)
+  access: 'Select partners only — certification via ryan@akia.com.'
+  example_app: https://akia-partner-example.herokuapp.com/
+  docs: https://api.akia.com/docs/embed
+- family: Campaign Pixel
+  description: 'A tracking pixel installed on a property''s landing and confirmation
+    pages so Akia can attribute conversions to campaign messages and surface the
+    result in reporting.'
+  loader: https://sys.akia.ai/sdk.js
+  global: akq
+  init: akq.init("<PIXEL_ID>")
+  events:
+  - name: pageview
+    call: akq.track("pageview")
+  - name: conversion
+    call: 'akq.track("conversion", {value: <CONVERSION_VALUE>})'
+  credential: 'Pixel ID, obtained from an Akia representative.'
+  docs: https://api.akia.com/docs/pixel
+- family: Mini Apps
+  description: 'Hosted, prebuilt guest-facing forms and flows (digital check-in,
+    pre-registration, agreements, guidebooks, upsells) rendered by Akia and reachable
+    through the API as mini_apps, agreements, signed_agreements and their session
+    objects. Sessions and responses are readable through the v3/v4 API.'
+  hosted: true
+  api_surface:
+  - GET /v4/mini_apps
+  - GET /v3/mini_apps/:mini_app_id
+  - GET /v3/mini_apps/:mini_app_id/sessions
+  - GET /v3/mini_app_sessions/:mini_app_session_id
+  - GET /v3/agreements
+  - POST /v3/agreements/generate
+  - GET /v3/agreements/:id/sessions
+  - GET /v3/signed_agreements/:id
+  scopes:
+  - mini_apps:read
+  - mini_apps:write
+  - mini_apps:partner_products
+  docs: https://www.akia.com/platform/mini-apps
+- family: Akia Everywhere (Chrome extension)
+  description: 'Browser extension that surfaces Akia alongside whatever system staff
+    are already working in.'
+  distribution: https://chromewebstore.google.com/detail/akia-everywhere/effolblenknnemcbajhhmcjodhdoolgj
+  kind: browser-extension
+mobile_apps:
+- platform: iOS
+  url: https://apps.apple.com/us/app/akia/id1439028977
+- platform: Android
+  url: https://play.google.com/store/apps/details?id=com.akia.ps
+on_premise:
+- name: Riptide
+  description: 'A Windows connector that bridges on-premise property management
+    systems without an API integration (e.g. Agilysys on-prem) into Akia. Issued to
+    customers on request with a Riptide Token from an Akia representative.'
+  download: https://akia-resources.s3.us-west-1.amazonaws.com/riptide-1.1.6.exe
+  version: 1.1.6
+  docs: https://api.akia.com/docs/riptide
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+  - url: https://api.akia.com/docs/webchat
+    http_status: 200
+  - url: https://api.akia.com/docs/embed
+    http_status: 200
+  - url: https://api.akia.com/docs/pixel
+    http_status: 200
+  - url: https://api.akia.com/docs/riptide
+    http_status: 200
+  note: 'These are client-side embeddable surfaces, not server-side SDKs. Akia
+    publishes no first-party client library on npm, PyPI, RubyGems, Packagist,
+    NuGet, Maven Central, crates.io or pkg.go.dev, and operates no public GitHub
+    organization, so no packages/ artifact was written.'

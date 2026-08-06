@@ -1,0 +1,5 @@
+Contact: mailto:security@akia.com
+Expires: 2027-08-06T12:12:54.814Z
+Preferred-Languages: en
+Canonical: https://www.akia.com/.well-known/security.txt
+Policy: https://www.akia.com/security

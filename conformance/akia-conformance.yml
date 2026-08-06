@@ -1,0 +1,116 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs
+standards:
+- id: oauth2
+  name: OAuth 2.0 Authorization Framework (RFC 6749)
+  conforms: true
+  evidence: 'Akia''s authentication docs state "authentication implemented in
+    accordance with OAuth 2.0 (RFC 6749)" and link the RFC; the authorization-code
+    and refresh-token exchanges are documented with curl examples.'
+  source: https://api.akia.com/docs/authentication
+- id: rfc8414-oauth-authorization-server-metadata
+  name: OAuth 2.0 Authorization Server Metadata (RFC 8414)
+  conforms: true
+  evidence: '/.well-known/oauth-authorization-server returns 200 application/json
+    with issuer, authorization_endpoint, token_endpoint, registration_endpoint,
+    grant_types_supported, response_types_supported, code_challenge_methods_supported
+    and token_endpoint_auth_methods_supported.'
+  source: well-known/akia-oauth-authorization-server.json
+- id: rfc9728-oauth-protected-resource-metadata
+  name: OAuth 2.0 Protected Resource Metadata (RFC 9728)
+  conforms: true
+  evidence: '/.well-known/oauth-protected-resource returns 200 with resource,
+    authorization_servers and scopes_supported; the MCP endpoint returns 401 with a
+    conformant WWW-Authenticate Bearer resource_metadata challenge.'
+  source: well-known/akia-oauth-protected-resource.json
+- id: rfc7636-pkce
+  name: Proof Key for Code Exchange (RFC 7636)
+  conforms: true
+  evidence: 'code_challenge_methods_supported: ["S256"] in the authorization-server
+    metadata.'
+  source: well-known/akia-oauth-authorization-server.json
+- id: rfc7591-dynamic-client-registration
+  name: OAuth 2.0 Dynamic Client Registration (RFC 7591)
+  conforms: true
+  evidence: 'registration_endpoint: https://sys.akia.ai/oauth/register advertised in
+    the authorization-server metadata.'
+  source: well-known/akia-oauth-authorization-server.json
+- id: rfc9116-security-txt
+  name: security.txt (RFC 9116)
+  conforms: true
+  evidence: 'https://www.akia.com/.well-known/security.txt returns 200 text/plain
+    with Contact, Expires, Preferred-Languages, Canonical and Policy fields.'
+  source: well-known/akia-security.txt
+- id: model-context-protocol
+  name: Model Context Protocol
+  conforms: true
+  evidence: 'A remote MCP endpoint is published at https://sys.akia.ai/mcp and
+    advertised as an OAuth protected resource. The transport answers JSON-RPC over
+    HTTP; tools/list is auth-gated so protocol-version conformance could not be
+    measured anonymously.'
+  source: mcp/akia-mcp.yml
+- id: llms-txt
+  name: llms.txt
+  conforms: true
+  evidence: 'https://www.akia.com/llms.txt returns 200 text/plain in llms.txt format
+    (H1, blockquote summary, sectioned link lists) and points at a full content dump
+    at /llms-full.txt.'
+  source: llms/akia-llms.txt
+- id: cloudflare-content-signals
+  name: Cloudflare Content Signals Policy
+  conforms: true
+  evidence: 'robots.txt carries "Content-Signal: search=yes, ai-input=yes,
+    ai-train=yes" plus an explicit named allow list for GPTBot, ClaudeBot,
+    PerplexityBot, Google-Extended, Applebot-Extended, CCBot and others.'
+  source: well-known/akia-robots.txt
+- id: e164
+  name: E.164 telephone numbering
+  conforms: true
+  evidence: 'The customer create operation documents "Expects the phone number to
+    formatted in E.164 standards (e.g. \"+16505551234\")".'
+  source: https://api.akia.com/docs/post/customers
+- id: soc2-type-ii
+  name: SOC 2 Type II
+  conforms: true
+  evidence: 'Claimed on https://www.akia.com/security — "Independently audited for
+    security, availability, and confidentiality." No report or audit letter is
+    published; the claim is not independently verified here.'
+  source: security/akia-trust-center.yml
+- id: gdpr
+  name: GDPR / CCPA
+  conforms: true
+  evidence: 'Claimed on https://www.akia.com/security and elaborated in the privacy
+    policy (effective July 16, 2026), which names data-controller and data-processor
+    roles.'
+  source: https://www.akia.com/privacy
+- id: openapi
+  name: OpenAPI Specification
+  conforms: false
+  evidence: 'No OpenAPI or Swagger document is published. Every spec path probed on
+    api.akia.com (/openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json,
+    /api-docs, /redoc) returns the SPA login HTML shell with HTTP 200.'
+- id: asyncapi
+  name: AsyncAPI
+  conforms: false
+  evidence: 'Webhook subscriptions are documented in HTML at
+    https://api.akia.com/docs/webhooks but no AsyncAPI document is published and no
+    per-event payload schema is given.'
+- id: rfc9457-problem-details
+  name: Problem Details for HTTP APIs (RFC 9457)
+  conforms: false
+  evidence: 'Responses use a bespoke envelope {status, status_code, data}; no
+    application/problem+json media type and no error-code reference are published.'
+- id: openid-connect
+  name: OpenID Connect Discovery
+  conforms: false
+  evidence: '/.well-known/openid-configuration returns 404 on www.akia.com and
+    akia.ai; OAuth 2.0 is used for delegated API authorization only, not identity.'
+- id: a2a
+  name: A2A Agent Card
+  conforms: false
+  evidence: '/.well-known/agent-card.json and /.well-known/agent.json return 404 on
+    www.akia.com and akia.ai, and an HTML SPA shell (rejected) on api.akia.com,
+    sys.akia.com and sys.akia.ai. No agent card is published.'
+x-evidence:
+  fetched: '2026-08-06'

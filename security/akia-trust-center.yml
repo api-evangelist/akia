@@ -1,0 +1,42 @@
+generated: '2026-08-06'
+method: searched
+probe: true
+source: https://www.akia.com/security
+url: https://www.akia.com/security
+certifications:
+- SOC 2 Type II
+- GDPR
+- CCPA
+posture:
+- claim: SOC 2 Type II
+  detail: Independently audited for security, availability, and confidentiality.
+- claim: Encryption
+  detail: All data encrypted at rest (AES-256) and in transit (TLS 1.3).
+- claim: GDPR Compliant
+  detail: Full compliance with GDPR, CCPA, and other privacy regulations.
+- claim: 99.99% Uptime
+  detail: Enterprise-grade infrastructure with redundancy and failover.
+contact:
+  security_team: https://www.akia.com/contact
+  security_txt: mailto:security@akia.com
+gaps:
+- 'No dedicated trust portal — trust.akia.com does not resolve. The compliance
+  posture is a marketing section on https://www.akia.com/security with no
+  downloadable report, subprocessor list, or audit-evidence request flow.'
+- 'No status page — status.akia.com does not resolve and no status URL is linked
+  from the site, the developer docs, or llms.txt, so the 99.99% uptime claim cannot
+  be checked from outside.'
+evidence:
+- source: https://www.akia.com/security
+  http_status: 200
+  keywords:
+  - soc 2 type ii
+  - gdpr
+  - ccpa
+  - aes-256
+  - tls 1.3
+- source: https://trust.akia.com/
+  http_status: 0
+  note: DNS does not resolve
+x-evidence:
+  fetched: '2026-08-06'

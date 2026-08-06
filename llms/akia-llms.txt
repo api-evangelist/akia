@@ -1,0 +1,217 @@
+# Akia
+
+> Akia is an agentic AI product for hospitality that autonomously manages the guest lifecycle — messaging, reservations, upsells, surveys — from booking through checkout. Trusted by 2,000+ operators.
+
+Akia is not a platform with AI bolted on. It is a heartbeat-driven agent that works proactively on behalf of hotel staff, takes action in the PMS and adjacent systems, and escalates when it needs a human.
+
+## About
+- [About](https://www.akia.com/about)
+- [Pricing](https://www.akia.com/pricing)
+- [Security](https://www.akia.com/security)
+- [Careers](https://www.akia.com/careers)
+- [Contact](https://www.akia.com/contact)
+- [Request a demo](https://www.akia.com/demo)
+
+## Platform
+- [Guest Experience](https://www.akia.com/platform/guest-experience)
+- [Digital Check In](https://www.akia.com/platform/digital-check-in)
+- [Guidebooks](https://www.akia.com/platform/guidebooks)
+- [Upsells](https://www.akia.com/platform/upsells)
+- [Tipping](https://www.akia.com/platform/tipping)
+- [Web Chat](https://www.akia.com/platform/web-chat)
+- [Surveys](https://www.akia.com/platform/surveys)
+- [Reputation](https://www.akia.com/platform/reputation)
+- [Mini Apps](https://www.akia.com/platform/mini-apps)
+- [Tasks](https://www.akia.com/platform/tasks)
+- [Team Chat](https://www.akia.com/platform/team-chat)
+- [Keyless Entry](https://www.akia.com/platform/keyless-entry)
+- [Third Party Authorizations](https://www.akia.com/platform/third-party-authorizations)
+- [Marketing](https://www.akia.com/platform/marketing)
+- [Crm](https://www.akia.com/platform/crm)
+
+## Solutions
+- [Hotels](https://www.akia.com/solutions/hotels)
+- [Vacation Rentals](https://www.akia.com/solutions/vacation-rentals)
+
+
+## Blog (latest)
+- [Hotel Reputation Management: A Complete Guide](https://www.akia.com/blog/hotel-reputation-management): A complete guide to monitoring, responding to, and improving your hotel's online reviews, plus the move that stops the bad review before it's ever written.
+- [Hotel KPIs: 14 Metrics Every Property Should Track](https://www.akia.com/blog/hotel-kpis): RevPAR, GOPPAR, CPOR, RGI, ALOS, and nine more, each with its formula and all of them worked through the same 120-room month so the numbers connect.
+- [The Best AI Guest Communication Software for Hotels in 2026](https://www.akia.com/blog/best-ai-guest-communication-software-hotels): Chatbot, copilot, or AI agent? Compare the guest communication platforms hoteliers actually shop for in 2026, sorted by what each does best.
+- [How to Respond to Negative Hotel Reviews (and Prevent More)](https://www.akia.com/blog/negative-reviews-chatgpt): Respond to negative reviews quickly and tactfully with the help of artificial intelligence.
+- [Why Google Reviews Beat TripAdvisor](https://www.akia.com/blog/google-reviews-are-becoming-more-important-than-tripadvisor-reviews): You're in a new city looking for dinner, so you pull out your phone and search. Two restaurants show up nearby: one at 4.5 stars, one at 2.5. You already know which one you're picking.
+- [How Dylan Hotel Climbed 300+ Ranks on TripAdvisor](https://www.akia.com/blog/climb-300-ranks-on-tripadvisor): Dylan Hotel NYC climbed from #390 to #63 on TripAdvisor in a little over three years. Here is how better review timing did it.
+- [Why Your Hotel Needs a Reputation Management Strategy](https://www.akia.com/blog/why-your-hotel-needs-a-reputation-management-strategy): How often do you check the reviews before going to a restaurant? Would you avoid a restaurant with less than 3 stars?
+- [What Does "Comped" Mean?](https://www.akia.com/blog/what-does-comped-mean): Comped means given for free. Here is what it means at a hotel, casino, and restaurant, how comps actually work, and how to get comped.
+- [Hotel vs Resort: What's the Difference?](https://www.akia.com/blog/hotel-vs-resort): The real difference between a hotel and a resort, what resort fees cost in 2026 under the new FTC rule, and how to choose the right stay for your trip.
+- [What is RevPAR?](https://www.akia.com/blog/what-is-revpar): A practical guide to understanding RevPAR, how to calculate it, and what it reveals about hotel performance.
+- [International Housekeepers Week 2026: Dates, Ideas, and Ways to Thank Your Team](https://www.akia.com/blog/international-housekeepers-week): International Housekeepers Week 2026 runs September 13 to 19. Here are the dates, celebration ideas, and modern ways to recognize the team that carries your guest experience.
+- [Motel vs Hotel: What's the Difference?](https://www.akia.com/blog/motel-vs-hotel): Motels and hotels look alike but are built for different trips. Here's how they differ in price, amenities, layout, and location, and how to choose.
+- [The night shift: 1.6 million guest messages reveal the after-hour demand.](https://www.akia.com/blog/guest-messages-after-hours): A 30-day look at 1.6 million guest messages shows the ones that arrive after dark are urgent ones, and the slowest to get answered.
+
+- [How to get direct bookings for your vacation rental (and stop paying OTA fees every time)](https://www.akia.com/blog/direct-booking-vacation-rental): The real cost of OTA commissions, five ways operators win guests back to direct booking, and how vacation rental companies are converting one-time Airbnb and Vrbo stays into repeat direct revenue.
+- [Hotel guest experience: how to design every touchpoint to earn 5-star reviews and repeat stays](https://www.akia.com/blog/hotel-guest-experience): A practical guide to improving hotel guest experience, covering pre-arrival communication through post-stay follow-up, and how properties deliver consistent service without adding headcount.
+- [Early Check-In and Late Checkout: when guests actually buy them](https://www.akia.com/blog/early-check-in-and-late-checkout-when-guests-actually-buy-them): Across a year of upsell purchases on Akia, early check-in sells on arrival day (42%) and late checkout sells on departure day (49%), and the bigger the party, the more likely they are to buy and the more they spend.
+
+- [AI for hotels: the tools operators are actually deploying in 2026 (and what each one does)](https://www.akia.com/blog/ai-for-hotels): A practical guide to AI in hospitality — the specific workflows hotels and vacation rentals are automating, what each AI category does, and how to build a stack that actually frees your team to focus on guests.
+- [Hotel marketing: a practical playbook for filling rooms and building direct-booking loyalty](https://www.akia.com/blog/hotel-marketing-guide): A practical guide to hotel marketing: what it covers, which channels drive the best returns, and how properties build direct-booking loyalty without depending on OTAs.
+- [Hotel front desk software: what the best properties use (and why a unified inbox changes everything)](https://www.akia.com/blog/hotel-front-desk-software): A practical guide to hotel front desk software — the five categories operators actually use, what to look for in each, and why the communication layer matters more than the PMS for day-to-day staff productivity.
+- [Hotel upsell software: how to choose a platform that turns check-in into a revenue moment](https://www.akia.com/blog/hotel-upsell-software): A practical guide to evaluating hotel upsell software — what to look for, what to avoid, and how properties are generating $1K–$20K/month in ancillary revenue on autopilot.
+- [Hotel Text Messaging: How to Automate Guest SMS](https://www.akia.com/blog/guest-messaging-a-practical-guide-for-hotels-and-short-term-rentals): Guests text. Here's how hotels and short-term rentals automate SMS and text messaging across every channel without burning out the front desk.
+- [Ask Akia: the same AI handling your guests, now works for your team](https://www.akia.com/blog/ask-akia-the-same-ai-handling-your-guests-now-works-for-your-team): For every shift manager who's been asked the same question 40 times and every new hire who's had to call a manager on day two.
+- [The #1 reason guests leave a 1-star rating.](https://www.akia.com/blog/the-1-reason-guests-leave-a-1-star-rating): Akia looked at one- and two-star guest reviews and found 21.8% are about the room itself — six times more than any other complaint category. An in-stay survey catches complaints privately before they go public, an AI agent that picks up on complaints in guest messages spins up tasks for the right team, and patterns across stays show which units and issues keep coming up.
+
+
+
+- [Two things that make Akia work: Knowledge Base and Skills](https://www.akia.com/blog/two-things-that-make-akia-work-knowledge-base-and-skills): We've reorganized your AI Agent settings around the distinction that matters most: what Akia knows vs. how she behaves.
+- [What 900,000 guest messages reveal about how properties actually run](https://www.akia.com/blog/what-900000-guest-messages-revealed-about-how-properties-actually-run): Across a 30-day sample of 900,000 guest messages flowing through Akia, roughly 4 out of 5 are repetitive questions an AI agent handles on day one. A smaller middle tier requires an agent trained on the property's specific policies. A final tier are complaints, refunds, and safety issues that should always escalate to a human.
+
+## Case studies
+- [Habitue Homes — AI Agents keep guest messaging consistent across its international team.  ](https://www.akia.com/case-studies/ai-agents-keep-guest-messaging-consistent-across-its-international-team)
+- [The Bellmoor Inn & Spa — How an EOS Hospitality property manages communication for their hotel and the spa bookings.](https://www.akia.com/case-studies/how-an-eos-hospitality-property-manages-communication-for-their-hotel-and-the-spa-bookings)
+- [The Guesthouse Hotel  — Pre-arrival, automated: less time responding, more revenue per stay.](https://www.akia.com/case-studies/pre-arrival-automated-less-time-responding-more-revenue-per-stay)
+- [Faria Resorts — Faria Resorts drove $89K in post-stay revenue in one month.](https://www.akia.com/case-studies/faria-resorts-drove-89k-in-post-stay-revenue-in-one-month)
+- [Rambla — Contactless property maintains high guest services with AI Agents.](https://www.akia.com/case-studies/rambla-a-contactless-property-maintains-high-guest-services-with-ai-agents)
+- [Weekender Hotels — Weekender Hotels: Simplifying multi-property operations](https://www.akia.com/case-studies/weekender-hotels-simplifying-multi-property-operations)
+- [Redamo Suites — 5 star experiences, without a front desk](https://www.akia.com/case-studies/redamo-suites-5-star-experiences-without-a-front-desk)
+- [Winter Park Lodging Company — Winter Park saved 25% of their workday with by automating their guest communication](https://www.akia.com/case-studies/syncing-data-from-their-pms-to-automate-their-journey)
+- [WERFY — WERFY doubled revenue in their slowest months](https://www.akia.com/case-studies/werfy-doubled-revenue-in-their-slowest-months)
+- [Revival Hotels — Revival Hotels generates $13K+ in post-stay bookings after switching to Akia.](https://www.akia.com/case-studies/revival-hotels-generates-13k-in-post-stay-bookings-after-switching-to-akia)
+- [IMPRINT Hospitality — IMPRINT Hospitality drives $75k in marketing revenue across its portfolio.](https://www.akia.com/case-studies/imprint-hospitality-drives-marketing-revenue-across-its-portfolio)
+- [The Mohicans Treehouse Resort and Wedding Venue — Capturing revenue from last-minute buyers](https://www.akia.com/case-studies/mohicans-treehouse-capturing-revenue-from-last-minute-buyers)
+- [Circle Hotel Fairfield — Circle Hotel Fairfield drives $125K in 4 months with Marketing Suite.](https://www.akia.com/case-studies/circle-hotel-fairfield-drives-125k-in-4-months-with-marketing-suite)
+- [Revival Hotels — Revival Hotels is Pioneering "Invisible Hospitality" with Akia’s Guest Journey Platform](https://www.akia.com/case-studies/revival-hotels-is-pioneering-invisible-hospitality-with-akias-guest-journey-platform)
+- [The Mohicans Treehouse Resort and Wedding Venue — Delivering a high-end retreat in an off-the-grid location](https://www.akia.com/case-studies/the-mohicans-high-end-retreat-in-an-off-the-grid-location)
+- [The Villa Toscana — Bed & breakfast cuts constant interruptions and drove revenue from upsells](https://www.akia.com/case-studies/villa-toscana-bed-breakfast-cuts-constant-interruptions-and-drove-revenue)
+- [Sandpiper Beacon Beach Resort — Turning upsells into 4x ROI](https://www.akia.com/case-studies/turning-upsells-into-4x-roi)
+- [black swan — Bring operational excellence with tighter integration.](https://www.akia.com/case-studies/bring-operational-excellence-with-tighter-integration)
+- [The Chandler Hotel — 24/7 coverage with AI Agents.](https://www.akia.com/case-studies/the-chandler-hotel-24-7-coverage-with-ai-agents)
+- [Dylan Hotel NYC — Climb 300+ ranks on TripAdvisor](https://www.akia.com/case-studies/climb-300-ranks-on-tripadvisor-2)
+- [Red Rock Vacations — Secure positive guest experiences](https://www.akia.com/case-studies/secure-positive-guest-experiences)
+- [Staypineapple — Staypineapple switches AI platforms and sees significant monthly revenue increase](https://www.akia.com/case-studies/staypineapple)
+- [Aspen Suites — Leave no guests unattended.](https://www.akia.com/case-studies/leave-no-guests-unattended)
+- [Rambla — $10K to $0 in fraud bookings](https://www.akia.com/case-studies/10k-to-0-in-fraud-bookings)
+- [Hotel Van Zandt — Hotel Van Zandt, a Sage property, replaces 3 tools with Akia to simplify operations](https://www.akia.com/case-studies/hotel-van-zandt-replaces-3-tools-with-akia)
+
+## Webinars
+- [the akia show  ](https://www.akia.com/webinars/the-akia-show-)
+- [Inside Invisible Hospitality™: Delivering high-touch stays with limited staff](https://www.akia.com/webinars/inside-invisible-hospitality-delivering-high-touch-stays-with-limited-staff)
+- [The Guest Experience Playbook: Communication, Consistency, and Competitive Edge](https://www.akia.com/webinars/the-guest-experience-playbook-communication-consistency-and-competitive-edge)
+- [From Data to Decisions](https://www.akia.com/webinars/from-data-to-decisions)
+- [From Likes to Stays](https://www.akia.com/webinars/from-likes-to-stays-social-media-strategies-that-drive-direct-bookings)
+- [Success in an Uncertain Market](https://www.akia.com/webinars/success-in-an-uncertain-market-how-hospitality-leaders-can-compete-and-win-in-2025)
+- [Guest Experiences: From Great to Extraordinary](https://www.akia.com/webinars/guest-experiences-from-great-to-extraordinary)
+- [Automate Door Code Access](https://www.akia.com/webinars/automate-door-code-access)
+- [Minimize Operational Cost with Guest Messaging](https://www.akia.com/webinars/minimize-operational-cost-with-guest-messaging)
+- [Guest Access](https://www.akia.com/webinars/guest-access-open-doors-without-an-app)
+- [Guest Data Drive Results](https://www.akia.com/webinars/guest-data-drive-results)
+- [Operate Smarter with AI](https://www.akia.com/webinars/operate-smarter-with-ai)
+- [Stop Fraud With AI](https://www.akia.com/webinars/stop-fraud-with-ai)
+
+## Integrations
+- [Brivo](https://www.akia.com/marketplace/brivo): Remote Key
+- [RemoteLock](https://www.akia.com/marketplace/remotelock): Remote Key
+- [FLEXIPASS](https://www.akia.com/marketplace/flexipass): Remote Key
+- [Sirvoy](https://www.akia.com/marketplace/sirvoy): Property Management
+- [Escapia](https://www.akia.com/marketplace/escapia): Property Management
+- [RoomMaster](https://www.akia.com/marketplace/roommaster): Property Management
+- [Elina PMS](https://www.akia.com/marketplace/elina): Property Management
+- [Checkfront](https://www.akia.com/marketplace/checkfront): Property Management
+- [Clock](https://www.akia.com/marketplace/clock): Property Management
+- [RoomRaccoon](https://www.akia.com/marketplace/roomraccoon): Property Management
+- [Guesty](https://www.akia.com/marketplace/guesty): Property Management
+- [OwnerRez](https://www.akia.com/marketplace/ownerrez): Property Management
+- [Cloudbeds](https://www.akia.com/marketplace/cloudbeds): Property Management
+- [WebRezPro](https://www.akia.com/marketplace/webrezpro): Property Management
+- [Apaleo](https://www.akia.com/marketplace/apaleo): Property Management
+- [Mews](https://www.akia.com/marketplace/mews): Property Management
+- [Autoclerk](https://www.akia.com/marketplace/autoclerk): Property Management
+- [RezStream](https://www.akia.com/marketplace/rezstream): Property Management
+- [InnRoad](https://www.akia.com/marketplace/innroad): Property Management
+- [Stripe](https://www.akia.com/marketplace/stripe): Payments
+- [Streamline](https://www.akia.com/marketplace/streamline): Property Management
+- [AutoHost](https://www.akia.com/marketplace/autohost): Operations
+- [Quore](https://www.akia.com/marketplace/quore): Operations
+- [Book4Time](https://www.akia.com/marketplace/book4time): Operations
+- [CleanMeNext LLC](https://www.akia.com/marketplace/cleanmenext): Operations
+- [Veriff](https://www.akia.com/marketplace/veriff): Operations
+- [Knowcross](https://www.akia.com/marketplace/knowcross): Operations
+- [StayNTouch](https://www.akia.com/marketplace/stayntouch): Property Management
+- [Agilysys](https://www.akia.com/marketplace/agilysys): Property Management
+- [Opera](https://www.akia.com/marketplace/opera): Property Management
+- [Resort Suite](https://www.akia.com/marketplace/resortsuite): Property Management
+- [Alice](https://www.akia.com/marketplace/alice): Operations
+- [Maestro](https://www.akia.com/marketplace/maestro): Property Management
+- [Lodgify](https://www.akia.com/marketplace/lodgify): Property Management
+- [LuxuryRes](https://www.akia.com/marketplace/luxuryres): Property Management
+- [Hostfully](https://www.akia.com/marketplace/hostfully): Property Management
+- [SkyTouch](https://www.akia.com/marketplace/skytouch): Property Management
+- [Hostaway](https://www.akia.com/marketplace/hostaway): Property Management
+- [Hospitable](https://www.akia.com/marketplace/hospitable): Property Management
+- [Track PMS](https://www.akia.com/marketplace/track-pms): property-management
+- [Unifocus](https://www.akia.com/marketplace/unifocus): operations
+- [OpenKey](https://www.akia.com/marketplace/openkey): smart-locks
+- [Salto KS](https://www.akia.com/marketplace/salto-ks): smart-locks
+- [TCA Innsist](https://www.akia.com/marketplace/tca-innsist): property-management
+- [Stax Payments](https://www.akia.com/marketplace/stax-payments): payments
+- [SIHOT](https://www.akia.com/marketplace/sihot): property-management
+- [ASI Cloud](https://www.akia.com/marketplace/asi-cloud): property-management
+- [Guest Tracker](https://www.akia.com/marketplace/guest-tracker): property-management
+- [Infor HMS](https://www.akia.com/marketplace/infor-hms): property-management
+- [Jonas Chorum](https://www.akia.com/marketplace/jonas-chorum): property-management
+
+## Glossary
+- [Guest Journey](https://www.akia.com/glossary/guest-journey)
+- [Weighted Average Daily Rate](https://www.akia.com/glossary/weighted-average-daily-rate)
+- [Total Revenue per Available Room](https://www.akia.com/glossary/total-revenue-per-available-room)
+- [Gross Operating Profit per Available Room](https://www.akia.com/glossary/gross-operating-profit-per-available-room)
+- [Revenue per Available Room](https://www.akia.com/glossary/revenue-per-available-room)
+- [RevPAR Index](https://www.akia.com/glossary/revpar-index)
+- [Yield Management](https://www.akia.com/glossary/yield-management)
+- [Cost per Occupied Room](https://www.akia.com/glossary/cost-per-occupied-room)
+- [Average Length of Stay](https://www.akia.com/glossary/average-length-of-stay)
+- [Average Daily Rate](https://www.akia.com/glossary/average-daily-rate)
+- [Occupancy Rate](https://www.akia.com/glossary/occupancy-rate)
+- [Comp / Comped](https://www.akia.com/glossary/comp-comped)
+- [Wholesale Rate](https://www.akia.com/glossary/wholesale-rate)
+- [Walk / Walked](https://www.akia.com/glossary/walk-walked)
+- [Waitlist](https://www.akia.com/glossary/waitlist)
+- [Voice Assistant](https://www.akia.com/glossary/voice-assistant)
+- [Virtual Credit Card](https://www.akia.com/glossary/virtual-credit-card)
+- [Vector Embeddings](https://www.akia.com/glossary/vector-embeddings)
+- [Vector Database](https://www.akia.com/glossary/vector-database)
+- [Understay](https://www.akia.com/glossary/understay)
+- [Turn-down Service](https://www.akia.com/glossary/turn-down-service)
+- [Turn](https://www.akia.com/glossary/turn)
+- [Travel Agent Commission](https://www.akia.com/glossary/travel-agent-commission)
+- [Transient vs Group](https://www.akia.com/glossary/transient-vs-group)
+- [Walk-in](https://www.akia.com/glossary/walk-in)
+- [Tokenization](https://www.akia.com/glossary/tokenization)
+- [Stop Sell](https://www.akia.com/glossary/stop-sell)
+- [Shoulder Season](https://www.akia.com/glossary/shoulder-season)
+- [Sentiment Analysis](https://www.akia.com/glossary/sentiment-analysis)
+- [Seasonal Cancellation Policy](https://www.akia.com/glossary/seasonal-cancellation-policy)
+- [Run of House](https://www.akia.com/glossary/run-of-house)
+- [Room Upgrade](https://www.akia.com/glossary/room-upgrade)
+- [Room Move](https://www.akia.com/glossary/room-move)
+- [Room Inventory](https://www.akia.com/glossary/room-inventory)
+- [Room Block](https://www.akia.com/glossary/room-block)
+- [Retrieval-Augmented Generation](https://www.akia.com/glossary/retrieval-augmented-generation)
+- [Reservation Cut-off Date](https://www.akia.com/glossary/reservation-cut-off-date)
+- [Reinforcement Learning from Human Feedback](https://www.akia.com/glossary/reinforcement-learning-from-human-feedback)
+- [Reinforcement Learning](https://www.akia.com/glossary/reinforcement-learning)
+- [Recommendation Engine](https://www.akia.com/glossary/recommendation-engine)
+- [Rate Shopper](https://www.akia.com/glossary/rate-shopper)
+- [Rate Plan](https://www.akia.com/glossary/rate-plan)
+- [Rate Parity](https://www.akia.com/glossary/rate-parity)
+- [Rate Ladder](https://www.akia.com/glossary/rate-ladder)
+- [Rate Fence](https://www.akia.com/glossary/rate-fence)
+- [Rate Code](https://www.akia.com/glossary/rate-code)
+- [Rack Rate](https://www.akia.com/glossary/rack-rate)
+- [Property Management System](https://www.akia.com/glossary/property-management-system)
+- [Prompt Engineering](https://www.akia.com/glossary/prompt-engineering)
+- [Pre-Arrival](https://www.akia.com/glossary/pre-arrival)
+
+## Machine-readable
+- [Full content dump](https://www.akia.com/llms-full.txt)
+- [Sitemap](https://www.akia.com/sitemap.xml)

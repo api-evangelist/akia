@@ -1,0 +1,122 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs
+authentication:
+  style: oauth2-bearer
+  detail: 'OAuth 2.0 authorization-code with refresh tokens; every documented
+    operation states "An access token is required to access this resource" and names
+    the scope it needs.'
+  ref: authentication/akia-authentication.yml
+scopes:
+  model: per-operation
+  detail: 'Each operation reference page carries a "Scopes Required" row naming the
+    exact scope (e.g. customers:read on GET /v3/customers/:id, customers:write on
+    POST /v3/customers). Scopes are comma-delimited in the authorize dialog.'
+  ref: scopes/akia-scopes.yml
+http_methods:
+  documented:
+  - GET
+  - POST
+  note: 'The docs state "All calls in this documentation expect either GET or POST
+    requests". There is no PUT, PATCH or DELETE surface — updates are POSTs to the
+    resource path (e.g. POST /v3/customers/:id updates a customer).'
+response_envelope:
+  shape: '{status, status_code, data}'
+  fields:
+  - name: status
+    example: ok
+  - name: status_code
+    example: 200
+    note: The HTTP status code is repeated inside the body.
+  - name: data
+    note: 'An object for single-resource operations, an array for collections.'
+  example: |
+    {
+      "status": "ok",
+      "status_code": 200,
+      "data": { "id": "164533533" }
+    }
+  source: https://api.akia.com/docs/get/customers/:id
+error_envelope:
+  documented: false
+  note: 'Akia documents no error responses, no error-code registry, and no error
+    payload shape. Only the success envelope is shown on every operation page. The
+    status/status_code fields imply a non-ok variant but no example is published.
+    This is the single largest documentation gap on the API.'
+idempotency:
+  supported: false
+  header: null
+  note: 'No Idempotency-Key header or equivalent is documented. Akia does document
+    server-side de-duplication on an externally supplied identifier — the extern_id
+    field on POST /v3/customers and on reservations carries "Akia will automatically
+    dedupe against this identifier" — which gives create operations upsert-like
+    semantics keyed on the caller''s own id. That is a dedupe contract, not an
+    idempotency-key contract, and no retention window is stated.'
+  dedupe_key:
+    field: extern_id
+    applies_to:
+    - POST /v3/customers
+    - POST /v3/reservations
+    source: https://api.akia.com/docs/post/customers
+pagination:
+  documented: false
+  note: 'No pagination style, cursor, offset, limit, or page parameter is documented
+    on any collection operation. GET /v3/properties and GET /v4/mini_apps both
+    document "This API call has no request parameters" and return a bare array in
+    data.'
+filtering_and_search:
+  style: dedicated-search-endpoints
+  detail: 'Search is POST-only against explicit endpoints — POST /v3/customers/search
+    and POST /v4/reservations/search — taking office_id plus an identifier
+    (extern_id, confirmation_number) rather than query-string filters.'
+field_expansion:
+  documented: false
+metadata:
+  documented: false
+  note: 'Reservations expose a free-text notes field and custom_fields endpoints
+    (GET/POST /v3/reservations/:reservation_id/custom_fields), which serve the
+    metadata role.'
+request_tracing:
+  request_id_header: null
+  documented: false
+rate_limiting:
+  documented: true
+  limit: 'roughly 1 API call per second'
+  model: weighted
+  detail: 'Every API call has a different weight against our servers and as a result,
+    some APIs are less costly to your rate limit than others.'
+  headers: null
+  header_note: 'No rate-limit response headers (X-RateLimit-*, RateLimit-*, Retry-
+    After) are documented, and no 429 behaviour is described.'
+  guidance: 'Do not refresh the OAuth token on every call — "This API call is very
+    expensive and will cause your system to be rate limited quickly."'
+  source: https://api.akia.com/docs/rate_limits
+versioning:
+  style: uri-path
+  ref: lifecycle/akia-lifecycle.yml
+identifiers:
+  style: numeric-string
+  note: 'Documented types say integer but every published example returns ids as
+    JSON strings ("id": "164533533"). Monetary values (balance_due, deposit,
+    total_payment, tax) are integers in cents. Dates are YYYY-MM-DD strings.'
+  external_ids: 'extern_id threads a caller-owned identifier (typically the PMS
+    record id) through customers and reservations and is the documented dedupe key.'
+webhooks:
+  ref: asyncapi/akia-webhooks.yml
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+  - url: https://api.akia.com/docs
+    http_status: 200
+  - url: https://api.akia.com/docs/rate_limits
+    http_status: 200
+  - url: https://api.akia.com/docs/post/customers
+    http_status: 200
+  - url: https://api.akia.com/docs/get/customers/:id
+    http_status: 200
+  - url: https://api.akia.com/docs/post/reservations/search
+    http_status: 200
+  - url: https://api.akia.com/docs/get/properties
+    http_status: 200
+  - url: https://api.akia.com/docs/get/mini_apps
+    http_status: 200

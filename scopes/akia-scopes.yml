@@ -1,0 +1,89 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs/scopes
+docs: https://api.akia.com/docs/scopes
+schemes:
+- name: OAuth2
+  type: oauth2
+  source: https://api.akia.com/docs/authentication
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://sys.akia.com/oauth/authorize
+    tokenUrl: https://api.akia.com/oauth/token
+    refreshUrl: https://api.akia.com/oauth/token
+  - flow: authorizationCode
+    authorizationUrl: https://sys.akia.ai/oauth/authorize
+    tokenUrl: https://sys.akia.ai/oauth/token
+    source: well-known/akia-oauth-authorization-server.json
+    note: 'The RFC 8414 authorization-server metadata advertises sys.akia.ai as the
+      issuer for the MCP resource; the developer docs describe sys.akia.com for the
+      REST API dialog. Both are recorded as observed.'
+scope_delimiter: ','
+scopes:
+- scope: audiences:write
+  label: Audiences
+  description: Developer will be create and manage audiences on user's account.
+- scope: customers:read
+  label: Customers (Read)
+  description: Developer will be able to see information about user's customers.
+- scope: customers:write
+  label: Customers
+  description: Developer will be able to see create and modify user's customers.
+- scope: messages:read
+  label: Messages (Read)
+  description: Developer will be able to see messages sent and received to user's
+    customers.
+- scope: messages:write
+  label: Messages
+  description: Developer will be able to send messages to user's customers.
+- scope: mini_apps:partner_products
+  label: Partner Products
+  description: Developer will be able to provide products guests can purchase through
+    mini apps.
+- scope: mini_apps:read
+  label: Apps (Read)
+  description: Developer will be able to read data and resources from user's mini
+    apps.
+- scope: mini_apps:write
+  label: Apps
+  description: Developer will be able to create and update user's mini apps.
+- scope: offices:read
+  label: Offices (Read)
+  description: Developer will be able to see information about user's office.
+- scope: offices:write
+  label: Offices
+  description: Developer will be able to modify and delete information about user's
+    office.
+- scope: properties:read
+  label: Properties (Read)
+  description: Developer will be able to see information about user's property.
+- scope: properties:write
+  label: Properties
+  description: Developer will be able to modify and delete information about user's
+    property.
+- scope: reports:read
+  label: Reports
+  description: Developer will be able to read data and metadata of reports.
+- scope: tasks:read
+  label: Tasks (Read)
+  description: Developer will be able to read tasks and task queues on user's account.
+- scope: users:read
+  label: Users (Read)
+  description: Developer will be able to see staff and departments of user's property.
+- scope: users:write
+  label: Users
+  description: Developer will be able to create, modify, and delete staff and
+    departments.
+mcp_resource_scopes:
+  resource: https://sys.akia.ai/mcp
+  scopes_supported:
+  - customers:read
+  - messages:read
+  source: well-known/akia-oauth-protected-resource.json
+x-evidence:
+  fetched: '2026-08-06'
+  url: https://api.akia.com/docs/scopes
+  http_status: 200
+  content_type: text/html; charset=utf-8
+  note: 'The scope table is server-rendered HTML on Akia''s own developer docs; the
+    16 scopes above are transcribed verbatim from it. No OpenAPI declares them.'

@@ -1,0 +1,97 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs/authentication
+docs: https://api.akia.com/docs/authentication
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  - refreshToken
+  bearer_token: true
+  api_key_in: []
+  note: 'Akia publishes no API-key path. Every documented REST operation requires an
+    OAuth 2.0 access token, and the MCP endpoint requires a Bearer token from the
+    same authorization server.'
+schemes:
+- name: OAuth2
+  type: oauth2
+  spec: RFC 6749
+  sources:
+  - https://api.akia.com/docs/authentication
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://sys.akia.com/oauth/authorize
+    tokenUrl: https://api.akia.com/oauth/token
+    parameters:
+    - client_id
+    - scope
+    - response_type=code
+    - redirect_uri
+    scope_count: 16
+    scopes_source: scopes/akia-scopes.yml
+  - flow: refreshToken
+    tokenUrl: https://api.akia.com/oauth/token
+    parameters:
+    - refresh_token
+    - grant_type=refresh_token
+    - client_id
+    - client_secret
+- name: OAuth2 (authorization-server metadata)
+  type: oauth2
+  spec: RFC 8414
+  sources:
+  - well-known/akia-oauth-authorization-server.json
+  issuer: https://sys.akia.ai/
+  authorization_endpoint: https://sys.akia.ai/oauth/authorize
+  token_endpoint: https://sys.akia.ai/oauth/token
+  registration_endpoint: https://sys.akia.ai/oauth/register
+  grant_types_supported:
+  - authorization_code
+  - refresh_token
+  response_types_supported:
+  - code
+  code_challenge_methods_supported:
+  - S256
+  token_endpoint_auth_methods_supported:
+  - client_secret_post
+  - none
+- name: Bearer (MCP resource)
+  type: http
+  scheme: bearer
+  spec: RFC 9728
+  sources:
+  - well-known/akia-oauth-protected-resource.json
+  resource: https://sys.akia.ai/mcp
+  authorization_servers:
+  - https://sys.akia.ai/
+token_lifetimes:
+  authorization_code: 10 minutes, single use
+  access_token: 24 hours (expires_in 86400)
+  refresh_token: 'single use — expires together with the previous access token once
+    exchanged'
+redirect_uri_rules:
+- Must use HTTPS
+- Must not contain a fragment (#)
+- 'When supplied at the authorize step it must be repeated verbatim at the token
+  exchange'
+guidance:
+  from_docs: 'Even though it can be done, you should not refresh the token on every
+    call. This API call is very expensive and will cause your system to be rate
+    limited quickly.'
+access_model:
+  onboarding: request
+  note: 'Access to Akia''s API is currently available to select partners. Requests go
+    to partnerships@akia.com.'
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+  - url: https://api.akia.com/docs/authentication
+    http_status: 200
+  - url: https://api.akia.com/.well-known/oauth-authorization-server
+    http_status: 200
+  - url: https://api.akia.com/.well-known/oauth-protected-resource
+    http_status: 200
+  note: 'Derived nothing from OpenAPI — Akia publishes no machine-readable spec. Every
+    field above is transcribed from the provider''s own docs or its well-known
+    metadata documents.'

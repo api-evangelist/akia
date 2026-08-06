@@ -1,0 +1,247 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs/webhooks
+spec_type: Webhooks
+asyncapi_published: false
+asyncapi_note: Akia publishes no AsyncAPI document. The webhook catalog below is transcribed from the
+  provider's server-rendered HTML reference; no per-event payload schema, no event-name/topic identifier,
+  and no signature-verification scheme are published, so an AsyncAPI cannot be derived from it without
+  inventing channels and message schemas.
+delivery:
+  subscription: Webhooks are subscribed to in the Akia interface, not through the API. Relevant OAuth
+    scopes must be requested in the auth dialog for the webhook to fire correctly.
+  timeout_ms: 1500
+  expected_response: HTTP 200
+  retry: Anything other than a successful 200 is retried over the course of 24 hours with increasing intervals.
+  auto_unsubscribe: Endpoints that result in too many failures are automatically unsubscribed.
+  signature_verification: null
+  signature_note: No signing secret, HMAC header, or replay-protection mechanism is documented.
+events:
+- name: Behavior Detection
+  description: Receive payloads from customers who send messages that have their intent flagged by Akia.
+  kind: platform
+- name: Guest Message Created
+  description: Fires for every inbound guest message.
+  kind: platform
+- name: Product Added to Cart
+  description: Fires when a partner product is added to cart
+  kind: platform
+- name: Product Impression
+  description: Fires when a partner product is displayed
+  kind: platform
+- name: Product Order Status Changed
+  description: Fires when a partner product's order is cancelled
+  kind: platform
+- name: Product Purchased
+  description: Fires when a partner product is purchased
+  kind: platform
+partner_actions:
+  count: 140
+  partners: 27
+  note: The remainder of the subscription table is outbound partner-integration actions rather than Akia
+    platform events — each row fires an action against a named third-party system (property management,
+    smart lock, identity, task or payment) when a guest-lifecycle moment occurs. They are recorded here
+    because they are the observable event surface of the platform, but they are partner-scoped and several
+    rows are near-duplicates in the provider's own table.
+  by_partner:
+  - partner: Aavgo
+    actions:
+    - Aavgo QR Code
+  - partner: Apaleo
+    actions:
+    - Apaleo Assign Unit
+    - Apaleo Check In
+    - Apaleo Update Customer Data
+  - partner: Book4Time
+    actions:
+    - Book4Time Upload Mini App as Note
+  - partner: Brivo
+    actions:
+    - Brivo Delete Access
+    - Brivo Issue Access
+    - Brivo Suspend Access
+  - partner: Clock
+    actions:
+    - ClockPMS Add Order
+    - ClockPMS Update Guest Data
+  - partner: Cloudbeds
+    actions:
+    - Cloudbeds Add Order to Folio
+    - Cloudbeds Add Payment to Folio
+    - Cloudbeds Check In
+    - Cloudbeds Check In All Same Day Reservations
+    - Cloudbeds Check Out
+    - Cloudbeds Check Out All Same Day Reservations
+    - Cloudbeds Post Agreement
+    - Cloudbeds Post Balance
+    - Cloudbeds Update Customer Data
+    - Cloudbeds Upload Mini App PDF and Images
+    - Cloudbeds Write Custom Fields
+  - partner: Escapia
+    actions:
+    - Escapia Post Correspondence Event
+    - Escapia Rental Agreement Signed
+    - Escapia Upload Mini App
+  - partner: FLEXIPASS
+    actions:
+    - FLEXIPASS
+    - Flexipass Issue Code
+    - Flexipass Revoke Code
+    - Flexipass Revoke Code on Cancellation
+  - partner: Guesty
+    actions:
+    - Guesty Add Order to Folio
+    - Guesty Post Customer Data
+    - Guesty Upload Mini App
+  - partner: Hostfully
+    actions:
+    - Hostfully Send Back Pincode
+  - partner: Infoden Dev
+    actions:
+    - Infoden Post Checked-In Reservation (Rambla Solarino House)
+    - Infoden Post Checked-In Reservation (Story House)
+    - Infoden Post Checked-in Reservation (Rambla Berrywick)
+    - Infoden Post Checked-in Reservation (Rambla at Perry House) - Mobile Key
+    - Infoden Post Checked-in Reservation (Rambla at Perry House) - PIN
+    - Infoden Post Checked-in Reservation - Mobile Key
+    - Infoden Post Checked-in Reservation - PIN
+    - Infoden Post Checked-out Reservation (Rambla Berrywick)
+    - Infoden Post Checked-out Reservation (Rambla Solarino House)
+    - Infoden Post Checked-out Reservation (Rambla at Perry House) - Mobile Key
+    - Infoden Post Checked-out Reservation (Story House)
+    - Infoden Post Reservation Date Changed (Rambla Berrywick)
+    - Infoden Post Reservation Date Changed (Rambla Solarino House)
+    - Infoden Post Reservation Date Changed (Rambla at Perry House) - Mobile Key
+    - Infoden Post Reservation Date Changed (Story House)
+    - Infoden Post Updated Reservation (Rambla Berrywick)
+    - Infoden Post Updated Reservation (Rambla Solarino House)
+    - Infoden Post Updated Reservation (Rambla at Perry House) - Mobile Key
+    - Infoden Post Updated Reservation (Rambla at Perry House) - PIN
+    - Infoden Post Updated Reservation (Story House)
+    - Infoden Post Updated Reservation - Mobile Key
+    - Infoden Post Updated Reservation - PIN
+  - partner: Infor
+    actions:
+    - InforHMS Post Mini App Response
+    - InforHMS Update Customer Data
+  - partner: Jonas Chorum
+    actions:
+    - Jonas Chorum Check In Reservation
+    - Jonas Chorum Check Out Reservation
+    - Jonas Chorum Pre-Register Reservation
+    - Jonas Chorum Update Customer Data
+  - partner: Keycafe
+    actions:
+    - Keycafe Create Access
+  - partner: Linear
+    actions:
+    - Linear Task Create
+  - partner: Mews
+    actions:
+    - Mews Add Accompanying Guests
+    - Mews Add Order
+    - Mews Add Payment to Folio
+    - Mews Check In
+    - Mews Check In All Reservations
+    - Mews Check In for All Same Day Reservations
+    - Mews Check Out
+    - Mews Check in
+    - Mews Generate Digital Key URL
+    - Mews Generate Guest Portal URL
+    - Mews Guest Portal URL
+    - Mews Post Agreement
+    - Mews Pre Check In
+    - Mews Pre Check In for All Same Day Reservations
+    - Mews Update Arrival/Departure Times
+    - Mews Update Customer Data
+    - Mews Update Marketing Opt-In
+    - Mews Update Reservation Purpose
+    - Mews Upload Mini App
+  - partner: Opera
+    actions:
+    - Opera Add Accompanying Guests
+    - Opera Add Charge to Folio
+    - Opera Check In All Same Day Reservations
+    - Opera Check In Reservation
+    - Opera Check Out All Same Day Reservations
+    - Opera Check Out Reservation
+    - Opera OWS Add Online Check-In Trace
+    - Opera OWS Pre-Check-In
+    - Opera Post Conversation
+    - Opera Pre-Register All Same Day Reservations
+    - Opera Pre-Register Reservation
+    - Opera Update Credit Card via Shift4
+    - Opera Update Customer Data
+    - Opera Update Marketing Opt-In
+    - Opera Upload Mini App
+  - partner: RemoteLock
+    actions:
+    - RemoteLock Issue Code
+    - RemoteLock Issue code
+    - RemoteLock Revoke Code
+  - partner: RemoteLock - Middleware
+    actions:
+    - RemoteLock Issue Code
+    - RemoteLock Issue Code for All Same Day Reservations
+    - RemoteLock Revoke Code
+  - partner: Salto KS - Middleware
+    actions:
+    - Salto KS Issue Code
+    - Salto KS Revoke Access
+  - partner: StayNTouch
+    actions:
+    - StayNTouch Add Accompanying Guests
+    - StayNTouch Add Order
+    - StayNTouch Check In
+    - StayNTouch Check Out
+    - StayNTouch Post Customer Data
+    - StayNTouch Post Mini App as Note
+    - StayNTouch Pre-Check In
+    - StayNTouch Update Arrival/Departure Times
+  - partner: Streamline
+    actions:
+    - Streamline Flag Rental Agreement Signed
+    - Streamline Update Customer Data
+    - Streamline Upload Mini App Responses as Note
+  - partner: Track
+    actions:
+    - Track Add Reservation Tag
+    - Track Check In
+    - Track Check In All Reservations
+    - Track Check Out
+    - Track Post Conversation Link
+    - Track Post Customer Feedback
+    - Track Post Mini App Responses
+    - Track Rental Agreement Signed
+    - Track Survey
+    - Track Update Arrival/Departure Times
+    - Track Update Customer Data
+    - Track Update Reservation Data
+    - Track Upload Mini App
+  - partner: Veriff
+    actions:
+    - Veriff Create Session
+  - partner: WebRezPro
+    actions:
+    - WebRezPro Check In Reservation
+    - WebRezPro Check Out Reservation
+    - WebRezPro Send Back Reservation Data
+    - WebRezPro Update Customer Data
+    - WebRezPro Update Reservation Data
+    - WebRezPro Upload Mini App URL
+    - WebRezPro Write Reservation Charges
+  - partner: Wrike
+    actions:
+    - Wrike (Live) - Task Create
+    - Wrike - Order Create
+    - Wrike - Task Create
+  - partner: eRentalLock
+    actions:
+    - eRentalLock Issue Code
+x-evidence:
+  fetched: '2026-08-06'
+  url: https://api.akia.com/docs/webhooks
+  http_status: 200
+  content_type: text/html; charset=utf-8
+  rows_parsed: 267
+  distinct_rows: 146

@@ -1,0 +1,61 @@
+generated: '2026-08-06'
+method: searched
+source: https://api.akia.com/docs
+versioning:
+  scheme: uri-path
+  current: v3
+  stability: beta
+  docs: https://api.akia.com/docs
+  statement: 'The current version of the Akia API is version 3 (beta). The current
+    version of the API may release breaking changes, which will be published here.'
+  observed_versions:
+  - version: v3
+    base_url: https://api.akia.com/v3/
+    note: The documented default base URL for all calls.
+  - version: v4
+    note: 'Several operations are documented as v4 rather than v3 — GET /v4/mini_apps
+      and POST /v4/reservations/search both declare "Supported Versions: v4" on their
+      own reference pages. The docs carry a per-operation "Supported Versions" field
+      rather than a single API-wide version.'
+  x-note: 'The docs header reads "Version 3" while individual operations advertise v3
+    or v4; there is no published version-migration guide reconciling the two.'
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: 'No deprecation policy, sunset schedule, or RFC 8594 Sunset/Deprecation
+    header support is documented. The only forward-compatibility statement is that
+    breaking changes "will be published here" on the docs page — there is no dated
+    changelog to publish them into.'
+sla:
+  url: https://www.akia.com/security
+  uptime_target: 99.99%
+  note: 'Stated as a marketing claim on the security page ("Enterprise-grade
+    infrastructure with redundancy and failover"), not as a contractual SLA
+    document. The Master Services Agreement (https://www.akia.com/msa, last updated
+    January 2024) is the governing commercial contract.'
+status_page: null
+status_page_note: 'No status page found. status.akia.com does not resolve (DNS
+  NXDOMAIN) and no status URL appears on www.akia.com, api.akia.com/docs, or
+  https://www.akia.com/llms.txt.'
+changelog: null
+changelog_note: 'No dated changelog or release-notes page is published on any Akia
+  host. Product announcements appear as blog posts at https://www.akia.com/blog but
+  are not versioned or tied to API releases.'
+deprecated_operations: []
+deprecated_operations_note: 'Cannot be derived — Akia publishes no OpenAPI, and no
+  operation on the HTML reference is marked deprecated.'
+access:
+  onboarding: request
+  gate: 'Access to Akia''s API is currently available to select partners. Please
+    reach out to partnerships@akia.com if you have a request.'
+  embed_certification: 'Partner embedding requires certification via ryan@akia.com.'
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+  - url: https://api.akia.com/docs
+    http_status: 200
+  - url: https://api.akia.com/docs/get/mini_apps
+    http_status: 200
+  - url: https://status.akia.com/
+    http_status: 0
+    note: DNS does not resolve

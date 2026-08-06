@@ -42,5 +42,45 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Akia is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Akia (The Akia Syndicate) is a San Francisco based hospitality technology company whose AI agent
+platform automates the guest lifecycle for hotels and vacation rentals — guest messaging, an AI
+voice agent, digital check-in through Mini Apps, guidebooks, upsells, tipping, tasks, team chat,
+keyless entry, surveys, reputation management and marketing.
+
+- Website — https://www.akia.com/
+- Developer docs — https://api.akia.com/docs
+- Marketplace / integrations — https://www.akia.com/marketplace
+- Security & compliance — https://www.akia.com/security
+
+## What Akia publishes
+
+| Surface | Status |
+|---|---|
+| REST API v3 (v4 for mini apps + reservation search) | Documented at `api.akia.com/docs`, **partner-gated** (`partnerships@akia.com`) |
+| OAuth 2.0 (RFC 6749) + 16 published scopes | Yes — `scopes/`, `authentication/` |
+| `/.well-known/oauth-authorization-server` (RFC 8414) | Yes, incl. PKCE S256 + dynamic client registration |
+| `/.well-known/oauth-protected-resource` (RFC 9728) | Yes — advertises the MCP endpoint |
+| Remote MCP server (`https://sys.akia.ai/mcp`) | Yes, live; `tools/list` is OAuth-gated (401) |
+| `llms.txt` | Yes — `llms/akia-llms.txt` |
+| `security.txt` (RFC 9116) | Yes — `well-known/akia-security.txt` |
+| Webhook subscriptions | Yes, in HTML — `asyncapi/akia-webhooks.yml` |
+| Embeddable components (Web Chat, Embed SDK, Pixel, Mini Apps) | Yes — `components/` |
+
+## Not published by Akia
+
+These are recorded as absent, not as failures of this profile:
+
+- **No OpenAPI/Swagger.** Every spec path on `api.akia.com` (`/openapi.json`, `/openapi.yaml`,
+  `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/redoc`) returns the SPA login shell with
+  HTTP 200. The reference is server-rendered HTML only. **No spec has been authored on Akia's
+  behalf.**
+- **No AsyncAPI**, and no webhook payload schemas or signature-verification scheme.
+- **No error catalog** — the docs show only the success envelope `{status, status_code, data}`.
+- **No status page** (`status.akia.com` does not resolve) and **no dated changelog**.
+- **No deprecation policy** or Sunset/Deprecation header documentation.
+- **No first-party SDKs** on npm, PyPI, RubyGems, Packagist, NuGet, Maven Central, crates.io or
+  pkg.go.dev, and no public GitHub organization.
+- **No A2A agent card** — `/.well-known/agent-card.json` and `/.well-known/agent.json` 404 on
+  `www.akia.com` and `akia.ai`, and return an HTML SPA shell on the API hosts.
+- **No idempotency key.** Create operations dedupe on a caller-supplied `extern_id`, which is a
+  dedupe contract, not an idempotency contract.

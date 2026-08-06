@@ -1,23 +1,192 @@
 aid: akia
 name: Akia
-description: 'Akia is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Akia (The Akia Syndicate) is a San Francisco based hospitality technology
+  company whose AI agent platform automates the guest lifecycle for hotels and vacation
+  rentals — guest messaging over SMS/WhatsApp/web chat, an AI voice agent, digital
+  check-in and pre-registration through Mini Apps, guidebooks, upsells, tipping, tasks,
+  team chat, keyless entry, surveys, reputation management and marketing campaigns.
+  Akia synchronizes with more than fifty property management, smart-lock, payment and
+  operations systems (Opera, Mews, Cloudbeds, Apaleo, StayNTouch, Track, Guesty,
+  RemoteLock, Brivo, Salto KS, Veriff, Stripe) and exposes a partner-gated REST API
+  at api.akia.com/v3 with OAuth 2.0 authorization, a published scope catalog, outbound
+  webhook subscriptions, an embeddable web chat and partner embed SDK, and a remote
+  MCP server at sys.akia.ai/mcp for agent access.'
 url: https://raw.githubusercontent.com/api-evangelist/akia/refs/heads/main/apis.yml
+image: https://www.akia.com/icon.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-08-06'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1
+x-coverage:
+  state: covered
+  reason: covered
+  detail: 'Akia''s developer reference at api.akia.com/docs is fully server-rendered
+    and readable, and the OAuth, security.txt, llms.txt and MCP surfaces were all
+    harvested verbatim; the one real gap is that no OpenAPI is published anywhere on
+    the API host, so no spec has been authored on Akia''s behalf.'
+  evidence:
+  - url: https://api.akia.com/docs
+    status: 200
+  - url: https://api.akia.com/openapi.json
+    status: 200
+  - url: https://sys.akia.ai/mcp
+    status: 401
+  checked: '2026-08-06'
 created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
-apis: []
+- Hospitality
+- Hotels
+- Vacation Rentals
+- Guest Experience
+- Messaging
+- Artificial Intelligence
+- Agents
+- Property Management
+- Check-In
+apis:
+- aid: akia:akia-api
+  name: Akia API
+  description: 'Akia''s REST API (version 3, with version 4 resources for mini apps
+    and reservations) for creating and searching customers and reservations, sending
+    guest messages, reading properties, generating and reading mini-app and agreement
+    sessions, posting team-chat messages, building audiences and running reports.
+    Authorization is OAuth 2.0 (RFC 6749) authorization-code with refresh tokens and
+    a published scope catalog. Access is granted to select partners on request via
+    partnerships@akia.com.'
+  humanURL: https://api.akia.com/docs
+  baseURL: https://api.akia.com/v3/
+  tags:
+  - Guest Messaging
+  - Reservations
+  - Customers
+  - Hospitality
+  x-evidence:
+    verified: '2026-08-06'
+    method: fetched-docs
+    docs_url: https://api.akia.com/docs
+    docs_http_status: 200
+    documents: 'Server-rendered developer reference listing 30 operations across
+      Audience, Context, Customer, Mini Apps, Properties, Report, Reservations and
+      Team Chat, each with method, path, required scope, request and response
+      parameter tables and a JSON example.'
+    base_url_source: 'Documented on https://api.akia.com/docs — "All calls in this
+      documentation expect either GET or POST requests made against the following
+      base URL: https://api.akia.com/v3/"'
+    access: 'Partner-gated — "Access to Akia''s API is currently available to select
+      partners. Please reach out to partnerships@akia.com if you have a request."'
+    machine_readable_spec: 'none published — /openapi.json, /openapi.yaml,
+      /swagger.json, /v1/openapi.json, /api-docs, /redoc on api.akia.com all return
+      the SPA login shell (HTTP 200, text/html)'
+  properties:
+  - type: Documentation
+    url: https://api.akia.com/docs
+  - type: APIReference
+    url: https://api.akia.com/docs
+  - type: GettingStarted
+    url: https://api.akia.com/docs/introduction
+  - type: Authentication
+    url: https://api.akia.com/docs/authentication
+  - type: OAuthScopes
+    url: https://api.akia.com/docs/scopes
+  - type: RateLimits
+    url: https://api.akia.com/docs/rate_limits
+  - type: Webhooks
+    url: https://api.akia.com/docs/webhooks
+- aid: akia:akia-mcp
+  name: Akia MCP Server
+  description: 'Akia''s remote Model Context Protocol server, advertised through RFC
+    9728 OAuth protected-resource metadata at api.akia.com and sys.akia.com. The
+    endpoint requires a Bearer token issued by the Akia authorization server at
+    sys.akia.ai, which supports dynamic client registration (RFC 7591) and PKCE S256.
+    The advertised resource scopes are customers:read and messages:read.'
+  humanURL: https://api.akia.com/docs
+  baseURL: https://sys.akia.ai/mcp
+  tags:
+  - MCP
+  - Agents
+  x-evidence:
+    verified: '2026-08-06'
+    method: probed
+    url: https://sys.akia.ai/mcp
+    http_status: 401
+    www_authenticate: 'Bearer resource_metadata="https://sys.akia.ai/.well-known/oauth-protected-resource"'
+    note: 'tools/list and initialize both return 401 with an RFC 9728 challenge — the
+      server is genuinely published but the tool schemas require an authenticated
+      introspection.'
+  properties:
+  - type: MCPServer
+    url: mcp/akia-mcp.yml
+  - type: Authentication
+    url: authentication/akia-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/akia-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/akia-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/akia-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.akia.com/
+- type: DeveloperPortal
+  url: https://api.akia.com/docs
+- type: Documentation
+  url: https://api.akia.com/docs
+- type: APIReference
+  url: https://api.akia.com/docs
+- type: GettingStarted
+  url: https://api.akia.com/docs/introduction
+- type: Blog
+  url: https://www.akia.com/blog
+- type: Pricing
+  url: https://www.akia.com/pricing
+- type: SignUp
+  url: https://www.akia.com/demo
+- type: Login
+  url: https://sys.akia.ai
+- type: Support
+  url: https://www.akia.com/contact
+- type: TermsOfService
+  url: https://www.akia.com/msa
+- type: PrivacyPolicy
+  url: https://www.akia.com/privacy
+- type: Security
+  url: https://www.akia.com/security
+- type: Compliance
+  url: https://www.akia.com/security
+- type: Integrations
+  url: https://www.akia.com/marketplace
+- type: WellKnown
+  url: well-known/akia-well-known.yml
+- type: SecurityTxt
+  url: well-known/akia-security.txt
+- type: LLMsTxt
+  url: llms/akia-llms.txt
+- type: MCPServer
+  url: mcp/akia-mcp.yml
+- type: Authentication
+  url: authentication/akia-authentication.yml
+- type: OAuthScopes
+  url: scopes/akia-scopes.yml
+- type: Conformance
+  url: conformance/akia-conformance.yml
+- type: Lifecycle
+  url: lifecycle/akia-lifecycle.yml
+- type: Conventions
+  url: conventions/akia-conventions.yml
+- type: Components
+  url: components/akia-components.yml
+- type: DataModel
+  url: data-model/akia-data-model.yml
+- type: Webhooks
+  url: asyncapi/akia-webhooks.yml
