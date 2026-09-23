@@ -1,4 +1,4 @@
-generated: '2026-08-06'
+generated: '2026-09-19'
 method: searched
 source: https://www.akia.com/.well-known/
 hosts:
@@ -13,10 +13,9 @@ hosts:
     status: 200
     content_type: text/plain; charset=utf-8
     file: akia-robots.txt
-    note: 'Carries a Cloudflare Content-Signal header (search=yes, ai-input=yes,
-      ai-train=yes) and an explicit named-agent allow list covering GPTBot,
-      ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot and
-      others; /admin/, /api/ and /decks/ are disallowed for all agents.'
+    note: Carries a Cloudflare Content-Signal header (search=yes, ai-input=yes, ai-train=yes) and an explicit
+      named-agent allow list covering GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended,
+      CCBot and others; /admin/, /api/ and /decks/ are disallowed for all agents.
   - path: /llms.txt
     status: 200
     content_type: text/plain; charset=utf-8
@@ -54,13 +53,13 @@ hosts:
   - path: /.well-known/security.txt
     status: 200
     rejected: true
-    reason: 'SPA catch-all — returns the api.akia.com login HTML shell for every
-      unmatched path, not a security.txt.'
+    reason: SPA catch-all — returns the api.akia.com login HTML shell for every unmatched path, not a
+      security.txt.
   - path: /.well-known/agent-card.json
     status: 200
     rejected: true
-    reason: 'SPA catch-all — HTML login shell, not an A2A AgentCard. No agent card
-      is published on any Akia host.'
+    reason: SPA catch-all — HTML login shell, not an A2A AgentCard. No agent card is published on any
+      Akia host.
 - host: https://sys.akia.com
   documents:
   - path: /.well-known/oauth-authorization-server
@@ -89,6 +88,15 @@ hosts:
     status: 200
     rejected: true
     reason: SPA catch-all HTML, not an AgentCard.
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: akia-sys-oauth-protected-resource.json
+    bytes: 141
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: akia-sys-oauth-authorization-server.json
+    bytes: 421
+  path_echo_control: passed
 x-evidence:
   fetched: '2026-08-06'
   probed_hosts:
@@ -98,3 +106,19 @@ x-evidence:
   - akia.ai
   - sys.akia.ai
   - web.akia.ai
+x-mcp-probe:
+  probed: '2026-09-19'
+  issue: roadmap#321, roadmap#337
+  documents:
+  - host: https://sys.akia.ai
+    path: /.well-known/oauth-protected-resource
+    file: akia-sys-oauth-protected-resource.json
+  - host: https://sys.akia.ai
+    path: /.well-known/oauth-authorization-server
+    file: akia-sys-oauth-authorization-server.json
+  validated_on: resource (RFC 9728) / issuer (RFC 8414, OIDC)
+  negative_control: one per host; a 2xx JSON object at an impossible path discards the host
+note: 'MCP-host OAuth discovery added 2026-09-19 (roadmap#321/#337): the harvest visits a provider''s
+  primary hosts, and RFC 9728 protected-resource metadata lives on the MCP host, so these documents existed
+  and were invisible to the scorer. Fetched live and validated on `resource`/`issuer`; one negative control
+  per host.'

@@ -1,0 +1,27 @@
+# Front Door AI Index — akia — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: akia
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.akia.com
+  final_host: www.akia.com
+  ownership: own
+  owner: akia
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 29
+  host_score: 29
+  density: 18.32
+  words: 1583
+  tiers:
+    agentic: 13
+    core: 16
+    model: 0
+  ambiguous: 14
+  top_terms:
+    AI: 16
+    agent: 14
+    AI agent: 13

@@ -1,0 +1,1 @@
+{"authorization_servers":["https://sys.akia.ai/"],"resource":"https://sys.akia.ai/mcp","scopes_supported":["customers:read","messages:read"]}
