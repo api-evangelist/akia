@@ -1,0 +1,33 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.akia.com/pricing
+sources:
+- https://www.akia.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: Tiered plans with no numeric prices; modules priced via sales. Limits listed are feature quotas,
+  not rate limits.
+plan_count: 3
+plans:
+- name: Basic
+  price_text: Talk to Sales
+  period: none
+  included_quota: Journeys 1, Touchpoints 6, Users Unlimited
+- name: Pro
+  price_text: Talk to Sales
+  period: none
+  included_quota: Journeys 3, Touchpoints 9, Users Unlimited
+- name: Max
+  price_text: Talk to Sales
+  period: none
+  included_quota: Journeys 9, Touchpoints 15, Users Unlimited
