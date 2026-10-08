@@ -31,3 +31,30 @@ plans:
   price_text: Talk to Sales
   period: none
   included_quota: Journeys 9, Touchpoints 15, Users Unlimited
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Basic
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Pro
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Max
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
