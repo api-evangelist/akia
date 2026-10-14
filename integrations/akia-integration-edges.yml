@@ -1,10 +1,46 @@
 generated: '2026-10-14'
 method: searched
 checked:
+- apaleo/integrations/apaleo-integration-edges.yml
+- guesty/integrations/guesty-integration-edges.yml
 - hostaway/integrations/hostaway-integration-edges.yml
+- mews-com/integrations/mews-com-integration-edges.yml
 source:
 - hostaway/integrations/hostaway-integration-edges.yml
 edges:
+- partner_name: apaleo (own)
+  partner: apaleo
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://store.apaleo.com/apps/akia
+  mirror_of: apaleo/integrations/apaleo-integration-edges.yml
+  apps:
+  - Akia
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Conversational AI
+- partner_name: Guesty (own)
+  partner: guesty
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.guesty.com/marketplace-items/akia/
+  mirror_of: guesty/integrations/guesty-integration-edges.yml
+  apps:
+  - Akia
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
 - partner_name: Hostaway (own)
   partner: hostaway
   partner_match: mirror
@@ -22,3 +58,19 @@ edges:
   detected: '2026-10-14'
   detected_by: mirror-platform-listings.py
   category: Communications
+- partner_name: Mews (own)
+  partner: mews-com
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.mews.com/en/products/marketplace/akia
+  mirror_of: mews-com/integrations/mews-com-integration-edges.yml
+  apps:
+  - Akia
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
