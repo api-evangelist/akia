@@ -64,45 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Akia (The Akia Syndicate) is a San Francisco based hospitality technology company whose AI agent
-platform automates the guest lifecycle for hotels and vacation rentals — guest messaging, an AI
-voice agent, digital check-in through Mini Apps, guidebooks, upsells, tipping, tasks, team chat,
-keyless entry, surveys, reputation management and marketing.
+Akia (The Akia Syndicate) is a San Francisco based hospitality technology company whose AI agent platform automates the guest lifecycle for hotels and vacation rentals — guest messaging over SMS/WhatsApp/web chat, an AI voice agent, digital check-in and pre-registration through Mini Apps, guidebooks, upsells, tipping, tasks, team chat, keyless entry, surveys, reputation management and marketing campaigns. Akia synchronizes with more than fifty property management, smart-lock, payment and operations systems (Opera, Mews, Cloudbeds, Apaleo, StayNTouch, Track, Guesty, RemoteLock, Brivo, Salto KS, Veriff, Stripe) and exposes a partner-gated REST API at api.akia.com/v3 with OAuth 2.0 authorization, a published scope catalog, outbound webhook subscriptions, an embeddable web chat and partner embed SDK, and a remote MCP server at sys.akia.ai/mcp for agent access.
 
-- Website — https://www.akia.com/
-- Developer docs — https://api.akia.com/docs
-- Marketplace / integrations — https://www.akia.com/marketplace
-- Security & compliance — https://www.akia.com/security
+**Areas:** Company · Hospitality · Hotels · Vacation Rentals · Guest Experience · Messaging · Artificial Intelligence · Agents · Property Management · Check-in
 
-## What Akia publishes
+## Akia on APIs.io
 
-| Surface | Status |
+Everything profiled for Akia is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/akia/](https://apis.io/providers/akia/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Akia API](https://apis.io/apis/akia/akia-api/) — Akia's REST API (version 3, with version 4 resources for mini apps and reservations) for creating and searching customers and reservations, sending guest…
+- [Akia MCP Server](https://apis.io/apis/akia/akia-mcp/) — Akia's remote Model Context Protocol server, advertised through RFC 9728 OAuth protected-resource metadata at api.akia.com and sys.akia.com. The endpoint…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Akia Webhooks](https://apis.io/asyncapis/akia/akia-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [akia](https://apis.io/servers/akia/akia/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Akia Authentication](https://apis.io/security/akia/akia-authentication/)
+- [Akia Domain Security](https://apis.io/security/akia/akia-domain-security/)
+- [Akia Trust Center](https://apis.io/security/akia/akia-trust-center/)
+- [Akia Vulnerability Disclosure](https://apis.io/security/akia/akia-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Akia Scopes](https://apis.io/scopes/akia/akia-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Akia Plans Pricing](https://apis.io/plans/akia/akia-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.akia.com/)
+- [Documentation](https://api.akia.com/docs)
+- [Getting started](https://api.akia.com/docs/introduction)
+- [API reference](https://api.akia.com/docs)
+- [Pricing](https://www.akia.com/pricing)
+- [Sign up](https://www.akia.com/demo)
+- [Support](https://www.akia.com/contact)
+- [Blog](https://www.akia.com/blog)
+- [Security](https://www.akia.com/security)
+- [Compliance](https://www.akia.com/security)
+- [Terms of service](https://www.akia.com/msa)
+- [Privacy policy](https://www.akia.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 55.7** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
 |---|---|
-| REST API v3 (v4 for mini apps + reservation search) | Documented at `api.akia.com/docs`, **partner-gated** (`partnerships@akia.com`) |
-| OAuth 2.0 (RFC 6749) + 16 published scopes | Yes — `scopes/`, `authentication/` |
-| `/.well-known/oauth-authorization-server` (RFC 8414) | Yes, incl. PKCE S256 + dynamic client registration |
-| `/.well-known/oauth-protected-resource` (RFC 9728) | Yes — advertises the MCP endpoint |
-| Remote MCP server (`https://sys.akia.ai/mcp`) | Yes, live; `tools/list` is OAuth-gated (401) |
-| `llms.txt` | Yes — `llms/akia-llms.txt` |
-| `security.txt` (RFC 9116) | Yes — `well-known/akia-security.txt` |
-| Webhook subscriptions | Yes, in HTML — `asyncapi/akia-webhooks.yml` |
-| Embeddable components (Web Chat, Embed SDK, Pixel, Mini Apps) | Yes — `components/` |
+| Discoverability | 75.0 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 57.1 |
+| Access clarity | 92.1 |
 
-## Not published by Akia
+**Agent readiness 47.1** — agent-ready (gated down from agent-native)
 
-These are recorded as absent, not as failures of this profile:
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
 
-- **No OpenAPI/Swagger.** Every spec path on `api.akia.com` (`/openapi.json`, `/openapi.yaml`,
-  `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/redoc`) returns the SPA login shell with
-  HTTP 200. The reference is server-rendered HTML only. **No spec has been authored on Akia's
-  behalf.**
-- **No AsyncAPI**, and no webhook payload schemas or signature-verification scheme.
-- **No error catalog** — the docs show only the success envelope `{status, status_code, data}`.
-- **No status page** (`status.akia.com` does not resolve) and **no dated changelog**.
-- **No deprecation policy** or Sunset/Deprecation header documentation.
-- **No first-party SDKs** on npm, PyPI, RubyGems, Packagist, NuGet, Maven Central, crates.io or
-  pkg.go.dev, and no public GitHub organization.
-- **No A2A agent card** — `/.well-known/agent-card.json` and `/.well-known/agent.json` 404 on
-  `www.akia.com` and `akia.ai`, and return an HTML SPA shell on the API hosts.
-- **No idempotency key.** Create operations dedupe on a caller-supplied `extern_id`, which is a
-  dedupe contract, not an idempotency contract.
+**Regulatory alignment 41.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/akia/](https://apis.io/providers/akia/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Akia: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/akia/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
